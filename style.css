@@ -1,0 +1,264 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&family=Tapestry&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+body {
+  background-color: #c5e4e7;
+
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.container {
+  background-color: white;
+  height: 789px;
+  width: 375px;
+  margin-top: 40.86px;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+input {
+  background-color: #f3f9fa;
+  height: 48px;
+  width: 311px;
+  text-align: right;
+  display: flex;
+  font-family: "Space Mono", sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 36px;
+  border: none;
+  border-radius: 5px;
+  margin-top: 6px;
+  padding-right: 20px;
+  cursor: pointer;
+  outline: none;
+}
+
+input[type="number"]::placeholder {
+  text-align: right;
+  color: #547878;
+
+  font-family: "Space Mono", sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 36px;
+}
+input[type="number"]{
+  visibility: inherit;
+}
+
+.btns {
+  background-color: #00474b;
+  height: 48px;
+  width: 146.6311798095703px;
+  font-family: "Space Mono", sans-serif;
+
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 36px;
+
+  border-radius: 5px;
+  border: 0;
+  color: white;
+  cursor: pointer;
+}
+
+.btns:hover {
+  background-color: #9fe8df;
+  color: #00474b;
+}
+.btn {
+  height: 48px;
+  width: 147.81369018554688px;
+  border: none;
+  text-align: right;
+  border-radius: 5px;
+  margin: 0;
+  padding: 0;
+  color: #547878;
+  padding-right: 20px;
+ 
+}
+
+.image {
+  height: 15.456000328063965px;
+  width: 9.84000015258789px;
+  left: 19.255859375px;
+  top: 16.87200927734375px;
+
+  position: absolute;
+}
+.icons {
+  position: relative;
+}
+.buttons {
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 16px;
+}
+.spl {
+  text-align: center;
+  margin-top: 163px;
+}
+.person {
+  position: absolute;
+
+  height: 16px;
+  width: 13px;
+  left: 17px;
+  top: 16px;
+}
+h4 {
+  margin-top: 32px;
+  font-family: "Space Mono", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  color: #5e7a7d;
+}
+.calculator {
+  height: 257px;
+  width: 327px;
+
+  border-radius: 15px;
+  background-color: #00474b;
+  margin-top: 32px;
+
+  padding-top: 39px;
+  padding-left: 24px;
+  padding-right: 22px;
+}
+h3 {
+  font-family: "Space Mono", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  color: white;
+}
+p {
+  font-family: "Space Mono", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 19px;
+  color: #7f9d9f;
+}
+h1 {
+  color: #26c2ae;
+  font-family: "Space Mono", sans-serif;
+  font-size: 32px;
+
+  font-weight: 700;
+  line-height: 47px;
+  letter-spacing: -0.6666666865348816px;
+}
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.flex1 {
+  margin-top: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.math {
+  margin-top: 35px;
+  height: 48px;
+  width: 281px;
+  border-radius: 5px;
+  background-color: #0d686d;
+  cursor: pointer;
+  color: #00474b;
+  font-family: "Space Mono", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 30px;
+
+  text-align: center;
+  border: none;
+}
+.math:hover {
+  background-color: #9fe8df;
+}
+h5 {
+  color: #3d6666;
+}
+.logo {
+  margin-top: 50px;
+}
+
+@media (min-width: 1440px) {
+  .container {
+    height: 481px;
+    width: 920px;
+    display: block;
+    padding-left: 48px;
+    padding-right: 32px;
+  }
+  .container-child {
+    display: flex;
+    justify-content: space-between;
+  }
+  .calculator {
+    height: 417px;
+    width: 413px;
+    padding-top: 56px;
+    border-radius: 15px;
+  }
+  h4 {
+    margin-top: 40px;
+  }
+  .btns {
+    height: 48px;
+    width: 117px;
+  }
+  .buttons {
+    grid-template-columns: auto auto auto;
+  }
+  .btn {
+    height: 48px;
+    width: 118px;
+
+    border-radius: 5px;
+  }
+  h1 {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 71px;
+    letter-spacing: -1px;
+  }
+  input {
+    height: 48px;
+    width: 379px;
+
+    border-radius: 5px;
+  }
+  .math {
+    margin-top: 122px;
+    margin-left: 40px;
+  }
+}
