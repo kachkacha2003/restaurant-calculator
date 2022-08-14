@@ -9,6 +9,7 @@ let button = 0;
 let procent;
 
 
+
 bill.addEventListener("mouseover",()=>{
   if(bill.value>=1){
     bill.style.border="2px solid green"
@@ -17,10 +18,6 @@ bill.addEventListener("mouseover",()=>{
     bill.style.border="2px solid red"
   }
   
-  if (bill.value[0] == 0 && bill.value[1] !== ".") {
-    bill.style.border="2px solid red"
-   
-  }
 
 
 })
@@ -30,20 +27,25 @@ bill.addEventListener("mouseout",()=>{
 
 
 costum.addEventListener("input", (c) => {
-  if (c.target.value[0] == 0 && c.target.value[1] !== ".") {
-    return false;
+  
+  if (c.target.value[0] === "0" ) {
+    costum.value="";
   }
+ 
   
 
   procent = c.target.value;
+ 
+
   if(costum.value>=1){
     
     costum.style.border="2px solid green";
   
 }else{
-  procent=0;
+  
+  procent="";
   costum.style.border="2px solid red"
-  return false;
+  
   
 }
 
@@ -53,7 +55,7 @@ costum.addEventListener("input", (c) => {
   dele_te();
 });
 costum.addEventListener("mouseover",()=>{
-  if(costum.value>=1){
+  if(costum.value>0){
     costum.style.border="2px solid green"
 
   }else{
@@ -96,6 +98,7 @@ costum.addEventListener("click", () => {
   }
   if (costum.value[0] == undefined) {
     procent = 0;
+    console.log(procent)
   }
 
   validation();
@@ -122,10 +125,12 @@ bill.addEventListener("input", (e) => {
   
  
 
-  if (e.target.value[0] ==0 && e.target.value[1] !== ".") {
+  if (bill.value[0] =="0" ) {
+    total.textContent = "$0.00";
+    tip.textContent = "$0.00";
     
     bill.style.border="2px solid red"
-    return false;
+    
   }
   
   if (e.target.value[0]==".") {
@@ -138,6 +143,9 @@ bill.addEventListener("input", (e) => {
     
     bill.style.border="2px solid green"
   
+}else{
+  bill.value="";
+  
 }
   
   
@@ -147,6 +155,27 @@ bill.addEventListener("input", (e) => {
 });
 
 people.addEventListener("input", (d) => {
+
+  if (d.target.value[0] ==="0" ) {
+    
+    people.style.border="2px solid red"
+    people.value="";
+    
+  }
+  
+  if (d.target.value[0]==".") {
+    people.style.border="2px solid red"
+    return false;
+    
+    
+  }
+  if (people.value[0] =="0" ) {
+    total.textContent = "$0.00";
+    tip.textContent = "$0.00";
+    
+    people.style.border="2px solid red"
+    
+  }
  
   if(people.value>=1){
     
@@ -154,7 +183,7 @@ people.addEventListener("input", (d) => {
   
 }else{
   people.style.border="2px solid red"
-  return false;
+  people.value="";
 }
 
   validation();
@@ -162,7 +191,7 @@ people.addEventListener("input", (d) => {
 });
 
 people.addEventListener("mouseover",()=>{
-  if(people.value>=1){
+  if(people.value>0){
     people.style.border="2px solid green"
 
   }else{
@@ -181,12 +210,10 @@ people.addEventListener("mouseout",()=>{
 
 
 let validation = function () {
-  if (costum.value[0] == undefined && procent !== 0) {
-    total.textContent = "$0.00";
-    tip.textContent = "$0.00";
-  }
+ 
 
-  if (bill.value >= 1 && procent >= 1 && people.value >= 1) {
+ 
+  if (bill.value >=1 && procent>=1 && people.value >=1) {
     total.textContent =
       "$" +
       (
@@ -201,6 +228,9 @@ let validation = function () {
         100 /
         parseInt(people.value)
       ).toFixed(2);
+     
+
+      
   } else {
     total.textContent = "$0.00";
     tip.textContent = "$0.00";
@@ -208,7 +238,9 @@ let validation = function () {
 };
 
 let dele_te=function(){
-if(bill.value >= 1 && procent >= 1 && people.value >= 1){
+  reset.style.backgroundColor="#26C2AE";
+
+if(bill.value >=1 || procent >=1 || people.value >=1){
   reset.addEventListener("click",()=>{
     total.textContent = "$0.00";
     tip.textContent = "$0.00";
@@ -221,6 +253,7 @@ if(bill.value >= 1 && procent >= 1 && people.value >= 1){
       buttons[i].style.backgroundColor = "";
       buttons[i].style.color = "";
     }
+    reset.style.backgroundColor="";
   
   })
 
